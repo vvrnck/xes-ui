@@ -1,0 +1,19 @@
+{
+    "errors": {
+        "error_api": "Error in API request.",
+        "error_getting_signed_url": "Error getting signed URL.",
+        "error_sending_file": "Error sending file.",
+        "error_uploading_file": "Error uploading file.",
+        "error_submit_form": "Error submitting form."
+    },
+    "success": {
+        "success_send_file": "File sent successfully!",
+        "success_check_email": "Check your email shortly."
+    },
+    "warning": {
+        "warning_fill_email": "Fill in the email first.",
+        "warning_upload_file_correctly": "Upload the file correctly.",
+        "warning_file_must_be_uploaded": "A file needs to be uploaded.",
+        "warning_send_file_data": "Could not send the file."
+    }
+}

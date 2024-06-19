@@ -1,0 +1,19 @@
+{
+    "errors": {
+        "error_api": "Error en la solicitud de la API.",
+        "error_getting_signed_url": "Error al obtener URL firmada.",
+        "error_sending_file": "Error al enviar archivo.",
+        "error_uploading_file": "Error al subir archivo.",
+        "error_submit_form": "Error al enviar datos."
+    },
+    "success": {
+        "success_send_file": "¡Archivo enviado con éxito!",
+        "success_check_email": "Revise su correo electrónico pronto."
+    },
+    "warning": {
+        "warning_fill_email": "Por favor, complete el correo electrónico primero.",
+        "warning_upload_file_correctly": "Cargue el archivo correctamente.",
+        "warning_file_must_be_uploaded": "Debe enviar un archivo.",
+        "warning_send_file_data": "No se pudo enviar el archivo."
+    }
+}

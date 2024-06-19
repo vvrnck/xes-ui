@@ -1,0 +1,10 @@
+{
+    "translation": "traducción i18n",
+    "xes_title": "Convertidor de Formato XES",
+    "next": "Siguiente",
+    "convert_step": "Paso de Conversión",
+    "file_step": "Paso de Archivo",
+    "not_valid_email": "This is not a valid email.",
+    "field_must_be_filled": "This field has to be filled.",
+    "close": "Fechar"
+}
