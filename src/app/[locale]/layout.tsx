@@ -1,6 +1,6 @@
 //"use client"; // keep track of issue https://github.com/vercel/next.js/issues/48879 causing a flick on components
 
-import '@/styles/globals.css'; 
+import '@/styles/globals.css';
 import { Inter } from 'next/font/google'
 import { Locale, getMessages, i18n } from '../../libs/i18n/i18n-config';
 import App from '@/components/app/App';

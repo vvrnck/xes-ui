@@ -1,0 +1,46 @@
+steps:
+  # Build the container image
+  - name: "gcr.io/cloud-builders/docker"
+    id: Build container image
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        export NEXT_PUBLIC_API_URL=${_NEXT_PUBLIC_API_URL}
+
+        docker build \
+          -t us-east1-docker.pkg.dev/$PROJECT_ID/xes/frontend:$SHORT_SHA \
+          -f Dockerfile \
+          --build-arg NEXT_PUBLIC_API_URL=${_NEXT_PUBLIC_API_URL} \
+          .
+  
+  # Push the container image to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    id: Push container image
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        docker push us-east1-docker.pkg.dev/$PROJECT_ID/xes/frontend:$SHORT_SHA
+
+  # Deploy container image to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    id: Deploy container image
+    entrypoint: bash
+    args:
+      - '-c'
+      - |
+        gcloud run deploy frontend \
+          --project=$PROJECT_ID \
+          --image us-east1-docker.pkg.dev/$PROJECT_ID/xes/frontend:$SHORT_SHA \
+          --region us-east1 \
+          --port 8080 \
+          --allow-unauthenticated
+images:
+  - "us-east1-docker.pkg.dev/$PROJECT_ID/xes/frontend:$SHORT_SHA"
+
+substitutions:
+    _NEXT_PUBLIC_API_URL: https://backend-hdwhupxgjq-ue.a.run.app/api/v1/
+
+options:
+  logging: CLOUD_LOGGING_ONLY

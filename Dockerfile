@@ -1,17 +1,16 @@
 # Get PNPM packages
-FROM node:20-alpine AS deps
+FROM node:20-alpine AS builder
 RUN apk update && apk add --no-cache libc6-compat
 RUN corepack enable && corepack prepare pnpm@9.1.0 --activate 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
+COPY . /app
 RUN pnpm install --only=production --frozen-lockfile
+ARG NEXT_PUBLIC_API_URL
+RUN touch .env
+RUN echo "NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL" >> .env
 
-# Rebuild the source code only when needed
-FROM node:20-alpine AS builder
-RUN corepack enable && corepack prepare pnpm@9.1.0 --activate
-WORKDIR /app
+RUN cat .env
 COPY . .
-COPY --from=deps /app/node_modules ./node_modules
 RUN pnpm build
 
 # Production image, copy all the files and run next

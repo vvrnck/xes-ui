@@ -1,6 +1,5 @@
 "use client";
 
-import '@/styles/globals.css';
 import useTheme from '@/hooks/useTheme';
 import { PropsWithChildren } from 'react';
 import { Toaster } from '../ui/sonner';
