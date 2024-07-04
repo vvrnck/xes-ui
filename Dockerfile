@@ -3,7 +3,7 @@ FROM node:20-alpine AS deps
 RUN apk update && apk add --no-cache libc6-compat
 RUN corepack enable && corepack prepare pnpm@9.1.0 --activate 
 WORKDIR /app
-COPY package.json pnpm-lock.yaml ./
+COPY . /app
 RUN pnpm install --only=production --frozen-lockfile
 
 # Rebuild the source code only when needed
