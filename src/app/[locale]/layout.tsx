@@ -1,13 +1,13 @@
 //"use client"; // keep track of issue https://github.com/vercel/next.js/issues/48879 causing a flick on components
 
-import '@/styles/globals.css';
+import '../../styles/globals.css';
 import { Inter } from 'next/font/google'
 import { Locale, getMessages, i18n } from '../../libs/i18n/i18n-config';
-import App from '@/components/app/App';
+import App from '../../components/app/App';
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import Footer from '@/components/footer/Footer';
+import Footer from '../../components/footer/Footer';
 
 const APP_NAME = "XES Converter";
 const APP_DESCRIPTION = "This is a XES Converter Application";
