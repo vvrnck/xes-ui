@@ -1,10 +1,11 @@
 {
     "email_step": "Preencha com seu e-mail",
     "email_address": "Endereço de E-mail",
+    "choose_file": "Escolher arquivo",
     "file": "Arquivo",
     "keys_relation": "Relação de Chaves",
     "case_id": "ID do Caso",
-    "timestamp": "Carimbo de Data/Hora",
+    "timestamp": "Marcação de Data/Hora",
     "activity_name": "Nome da Atividade",
     "delimiter": "Delimitador",
     "file_data_type": "Tipo de Dados do Arquivo",

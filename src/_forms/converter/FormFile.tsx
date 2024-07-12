@@ -52,10 +52,10 @@ const FormFile : React.FC = () => {
                                         fileInput.click();
                                     }} 
                                 >
-                                    <span className='w-[100px]'>
-                                        <b>Choose File</b>
+                                    <span className='w-[120px] whitespace-nowrap'>
+                                        <b>{t("choose_file")}</b>
                                     </span>
-                                    <span className='flex items-center w-full h-full overflow-hidden'>{fileName}</span>
+                                    <span className='flex items-center w-full h-ful overflow-hidden text-ellipsis whitespace-nowrap max-w-[150px] sm:max-w-xl'>{fileName}</span>
                                 </div>
                                 <FormMessage />
                             </FormItem>

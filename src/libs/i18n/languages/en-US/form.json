@@ -1,6 +1,7 @@
 {
     "email_step": "Enter your email",
     "email_address": "Email Address",
+    "choose_file": "Choose file",
     "file": "File",
     "keys_relation": "Keys Relation",
     "case_id": "Case ID",
